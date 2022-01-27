@@ -28,12 +28,7 @@ public class MarkdownParse {
             } else {
                 currentIndex += 1;
             }
-            if (openParen - nextCloseBracket == 1){
-                toReturn.add(markdown.substring(openParen + 1, closeParen));
-                
-            }
-
-            currentIndex = closeParen + 1;
+           
         }
         return toReturn;
     }
@@ -42,5 +37,6 @@ public class MarkdownParse {
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = getLinks(contents);
         System.out.println(links);
+        System.out.println("tests"); 
     }
 }
