@@ -21,6 +21,13 @@ public class MarkdownParseTest2 {
      * BREAKING TESTS
      */
     @Test
+    
+    @Test
+    public void testfail() throws IOException {
+        assertEquals(
+            3, 1+1); 
+       
+    }
     public void testGetLinks_breakingTest() throws IOException {
         String breaking_test = Files.readString(Path.of("breaking_test.md"));
         assertEquals(
