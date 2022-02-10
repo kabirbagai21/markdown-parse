@@ -29,6 +29,7 @@ public class MarkdownParse {
             ){
                 // Valid link, add to list
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
+                
                 currentIndex = closeParen + 1;
             } else {
                 // Invalid link, advance one character
@@ -46,3 +47,4 @@ public class MarkdownParse {
 }
 
 //Lab 5
+
