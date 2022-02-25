@@ -138,4 +138,42 @@ public class MarkdownParseTest2 {
             MarkdownParse.getLinks(str)
         );
     }
+
+    @Test
+    public void testGetLinks_testFile9() throws IOException {
+        String str =
+            Files.readString(Path.of("snippet1.md"));
+        assertEquals(
+            "Validate MarkdownParse on snippet1.md",
+            List.of("`google.com", "google.com", "ucsd.edu"),
+            MarkdownParse.getLinks(str)
+        );
+    }
+
+    @Test
+    public void testGetLinks_testFile10() throws IOException {
+        String str =
+            Files.readString(Path.of("snippet2.md"));
+        assertEquals(
+            "Validate MarkdownParse on snippet2.md",
+            List.of("a.com", "b.com", "a.com(())", "example.com"),
+            MarkdownParse.getLinks(str)
+        );
+    }
+
+    @Test
+    public void testGetLinks_testFile11() throws IOException {
+        String str =
+            Files.readString(Path.of("snippet3.md"));
+        assertEquals(
+            "Validate MarkdownParse on snippet3.md",
+            List.of("https://www.twitter.com", "https://ucsd-cse15l-w22.github.io/","https://cse.ucsd.edu/"), 
+            MarkdownParse.getLinks(str)
+        );
+    }
 }
+
+
+
+//javac -cp .:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest2.java
+//java -cp .:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest2
