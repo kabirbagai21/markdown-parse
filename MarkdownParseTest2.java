@@ -167,7 +167,7 @@ public class MarkdownParseTest2 {
             Files.readString(Path.of("snippet3.md"));
         assertEquals(
             "Validate MarkdownParse on snippet3.md",
-            List.of("https://www.twitter.com", "https://ucsd-cse15l-w22.github.io/","https://cse.ucsd.edu/"), 
+            List.of("https://ucsd-cse15l-w22.github.io/"), 
             MarkdownParse.getLinks(str)
         );
     }
