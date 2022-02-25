@@ -156,7 +156,7 @@ public class MarkdownParseTest2 {
             Files.readString(Path.of("snippet2.md"));
         assertEquals(
             "Validate MarkdownParse on snippet2.md",
-            List.of("a.com", "b.com", "a.com(())", "example.com"),
+            List.of("a.com", "a.com(())", "example.com"),
             MarkdownParse.getLinks(str)
         );
     }
